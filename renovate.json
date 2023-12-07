@@ -8,5 +8,26 @@
     ":semanticCommits",
     ":semanticCommitTypeAll(chore)"
   ],
-  "labels": ["dependencies"]
+  "labels": ["dependencies"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["vulnerability"],
+    "commitMessageSuffix": "[VULNERABILITY]",
+    "rangeStrategy": "update-lockfile",
+    "schedule": [],
+    "transitiveRemediation": true
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["patch"],
+      "automerge": true,
+      "semanticCommitScope": "dev-deps"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "addLabels": ["minor"],
+      "semanticCommitScope": "deps"
+    }
+  ]
 }
