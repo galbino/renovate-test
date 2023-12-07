@@ -6,7 +6,7 @@ authors = ["Gustavo Albino <gustavo@radhark.tech"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.11.*"
+python = "3.12.*"
 aiohttp = "^3.8.1"
 shed = "^2023.5.0"
 mypy = "^1.6.1"
